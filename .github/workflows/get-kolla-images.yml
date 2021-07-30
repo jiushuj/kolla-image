@@ -30,12 +30,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    
-    - name: edit docker dajson
-      run: echo {} > /etc/docker/daemon.json
-
-    - name: restart docker
-      run: systemctl daemon-reload && systemctl restart docker
 
     # Log into aliyun registry
     - name: Log into aliyun registry
