@@ -32,7 +32,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: edit docker dajson
-      run: echo {"registry-mirrors": ["https://couusfz1.mirror.aliyuncs.com"],"insecure-registries": ["139.198.29.134"]} > /etc/docker/daemon.json
+      run: echo {} > /etc/docker/daemon.json
 
     - name: restart docker
       run: systemctl daemon-reload && systemctl restart docker
