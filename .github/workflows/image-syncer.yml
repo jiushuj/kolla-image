@@ -20,8 +20,8 @@ env:
   KOLLA_BASE_DISTRO: centos
   INSTALL_TYPE: source
   OPENSTACK_RELEASE: wallaby
-  ALIYUN_REGISTRY: 139.198.29.134
-  ALIYUN_NAMESPACE: kollaimage
+  ALIYUN_REGISTRY: registry.cn-hangzhou.aliyuncs.com
+  ALIYUN_NAMESPACE: kollaimageall
 
 jobs:
   get-kolla-images:
