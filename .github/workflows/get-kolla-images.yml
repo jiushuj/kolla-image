@@ -22,7 +22,7 @@ env:
   OPENSTACK_RELEASE: wallaby
   ALIYUN_REGISTRY: registry.cn-hangzhou.aliyuncs.com
   ALIYUN_NAMESPACE: kollaimagesall
-
+ 
 jobs:
   get-kolla-images:
     runs-on: ubuntu-latest
