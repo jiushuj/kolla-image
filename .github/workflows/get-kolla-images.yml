@@ -29,9 +29,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: nassdns
-      run: ping 43.225.28.67
       
     # Log into aliyun registry
     - name: Log into aliyun registry
