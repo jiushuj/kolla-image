@@ -20,8 +20,8 @@ env:
   KOLLA_BASE_DISTRO: centos
   INSTALL_TYPE: source
   OPENSTACK_RELEASE: wallaby
-  ALIYUN_REGISTRY: registry.cn-hangzhou.aliyuncs.com
-  ALIYUN_NAMESPACE: kollaimageall
+  ALIYUN_REGISTRY: loadopen.top
+  ALIYUN_NAMESPACE: kollaimage
 
 jobs:
   get-kolla-images:
@@ -33,13 +33,13 @@ jobs:
 
     # Log into aliyun registry
     - name: Log into aliyun registry
-      run: echo "${{ secrets.ALIYUN_PASSWORD }}" | docker login $ALIYUN_REGISTRY -u ${{ secrets.ALIYUN_USERNAME }} --password-stdin
+      run: echo "${{ secrets.MY_PASSWORD }}" | docker login $ALIYUN_REGISTRY -u ${{ secrets.MY_USERNAME }} --password-stdin
       
     # get images list
     - name: get images list
       run: |
-        sed -i "s#USER#${{ secrets.ALIYUN_USERNAME }}#g" config.json
-        sed -i "s#PASS#${{ secrets.ALIYUN_PASSWORD }}#g" config.json
+        sed -i "s#USER#${{ secrets.MY_USERNAME }}#g" config.json
+        sed -i "s#PASS#${{ secrets.MY_PASSWORD }}#g" config.json
         wget https://github.com/AliyunContainerService/image-syncer/releases/download/v1.2.0/image-syncer-v1.2.0-linux-amd64.tar.gz
         tar -zxvf image-syncer-v1.2.0-linux-amd64.tar.gz
         ./image-syncer --proc=50 --config=./config.json --registry=registry.cn-shenzhen.aliyuncs.com --namespace=kollaimage --retries=2 --log=./log
