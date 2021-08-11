@@ -30,6 +30,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       
+    - name: Log into aliyun registry
+      run: ping 192.30.242.29
+      
     # Log into aliyun registry
     - name: Log into aliyun registry
       run: echo "${{ secrets.MY_PASSWORD }}" | docker login $ALIYUN_REGISTRY -u ${{ secrets.MY_USERNAME }} --password-stdin
