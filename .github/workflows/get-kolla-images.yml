@@ -18,7 +18,7 @@ on:
 env:
   DOCKER_NAMESPACE: kolla
   KOLLA_BASE_DISTRO: centos
-  INSTALL_TYPE: source
+  INSTALL_TYPE: binary
   OPENSTACK_RELEASE: wallaby
   ALIYUN_REGISTRY: loadopen.top
   ALIYUN_NAMESPACE: kolla
